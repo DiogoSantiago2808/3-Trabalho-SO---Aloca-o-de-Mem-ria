@@ -8,16 +8,16 @@
 
 ## 🎯 Objetivo do Projeto
 
-Este projeto implementa um **simulador de gerência de memória** que representa, de forma didática, o funcionamento interno de um sistema operacional no processo de **alocação e liberação de memória**.
+Este projeto implementa um simulador de gerência de memória que representa, de forma didática, o funcionamento interno de um sistema operacional no processo de alocação e liberação de memória.
 
-O simulador permite analisar o comportamento de diferentes **algoritmos clássicos de escolha de blocos**:
+O simulador permite analisar o comportamento de diferentes algoritmos clássicos de escolha de blocos:
 
 - First Fit
 - Best Fit
 - Worst Fit
 - Next Fit (extensão adicional)
 
-A gerência da memória é realizada utilizando a técnica do **Buddy Allocator**, na qual os blocos de memória possuem tamanhos em **potências de dois**, permitindo uma coalescência eficiente e a visualização clara da **fragmentação interna e externa**.
+A gerência da memória é realizada utilizando a técnica do **Buddy Allocator**, na qual os blocos de memória possuem tamanhos em potências de dois, permitindo uma coalescência eficiente e a visualização clara da fragmentação interna e externa.
 
 Além disso, o sistema exibe mapas visuais da memória, identificadores de blocos alocados e estatísticas detalhadas, conforme solicitado na atividade prática.
 
@@ -41,7 +41,7 @@ Além disso, o sistema exibe mapas visuais da memória, identificadores de bloco
 
 ### 🔹 `algorithms.py`
 
-Responsável exclusivamente pela **escolha do bloco livre** conforme o algoritmo selecionado.
+Responsável exclusivamente pela escolha do bloco livre conforme o algoritmo selecionado.
 
 - Enum `FitAlg` define os algoritmos disponíveis:
 
@@ -54,7 +54,7 @@ Responsável exclusivamente pela **escolha do bloco livre** conforme o algoritmo
 
   - Recebe a lista de blocos livres
   - Seleciona um bloco que comporte o tamanho solicitado
-  - **Não modifica a memória**
+  - Não modifica a memória
   - Funciona de forma independente da técnica de alocação interna
 
 Implementações:
@@ -68,7 +68,7 @@ Implementações:
 
 ### 🔹 `memory.py`
 
-Contém a **lógica principal da simulação**, incluindo a implementação do **Buddy Allocator**.
+Contém a lógica principal da simulação, incluindo a implementação do Buddy Allocator.
 
 #### 📦 Classe `Block`
 
@@ -80,7 +80,7 @@ Representa um bloco de memória, contendo:
 - Estado (`used`)
 - Tamanho solicitado pelo usuário (`requested_size`)
 
-Essa separação permite o cálculo correto da **fragmentação interna**.
+Essa separação permite o cálculo correto da fragmentação interna.
 
 ---
 
@@ -106,9 +106,9 @@ Principais métodos:
 
 A técnica do Buddy Allocator funciona da seguinte forma:
 
-- O tamanho solicitado é arredondado para a **próxima potência de dois**
+- O tamanho solicitado é arredondado para a próxima potência de dois
 - Blocos livres são divididos recursivamente até atingir o menor tamanho possível
-- Apenas **blocos irmãos (buddies)** podem ser unidos durante a coalescência
+- Apenas blocos irmãos (buddies) podem ser unidos durante a coalescência
 - Essa abordagem reduz a fragmentação externa, ao custo de fragmentação interna controlada
 
 ---
@@ -145,7 +145,7 @@ exit
 
 ### 🔹 `demo.py` — Cenários Automáticos
 
-Executa cenários pré-definidos para demonstrar o comportamento dos algoritmos de escolha de blocos **em conjunto com o Buddy Allocator**:
+Executa cenários pré-definidos para demonstrar o comportamento dos algoritmos de escolha de blocos em conjunto com o Buddy Allocator:
 
 1. First Fit com fragmentação interna
 2. Best Fit com divisão e coalescência de buddies
@@ -210,10 +210,6 @@ Foi necessário garantir que todos os blocos possuíssem tamanhos em potência d
 ### 🔹 Coalescência de Blocos
 
 A junção de blocos livres exigiu o uso de regras específicas do Buddy Allocator para evitar fusões inválidas.
-
-### 🔹 Implementação do Next Fit
-
-Foi necessário manter o controle da última posição alocada, garantindo comportamento correto com wrap-around.
 
 ### 🔹 Fragmentação Interna
 
