@@ -6,6 +6,25 @@
 
 ---
 
+O desenvolvimento do projeto foi realizado de forma colaborativa, com divisão de responsabilidades entre os membros do grupo, conforme descrito abaixo:
+
+Diego Rabelo de Sá
+Responsável pelo estudo teórico dos algoritmos de alocação de memória e pelo apoio na definição da arquitetura geral do simulador.
+
+Diogo Santiago Oliveira
+Responsável pela implementação dos algoritmos de escolha de blocos (First Fit, Best Fit, Worst Fit e Next Fit) no módulo algorithms.py.
+
+Ernesto Dalva de Medeiros
+Responsável pela implementação da lógica principal de gerenciamento de memória, incluindo a estrutura de blocos e a aplicação da técnica do Buddy Allocator no módulo memory.py.
+
+July Santiago Coelho
+Responsável pelo desenvolvimento da interface interativa em linha de comando (main.py) e pela validação dos comandos do usuário.
+
+Ramon Nicolas Gomes Luna
+Responsável pela criação dos cenários automáticos de teste (demo.py), pela validação dos resultados e pelo apoio na documentação do projeto.
+
+Essa divisão permitiu melhor organização do desenvolvimento, facilitando testes, manutenção do código e integração das funcionalidades.
+
 ## 🎯 Objetivo do Projeto
 
 Este projeto implementa um simulador de gerência de memória que representa, de forma didática, o funcionamento interno de um sistema operacional no processo de alocação e liberação de memória.

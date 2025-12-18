@@ -38,6 +38,6 @@ def choose_block(blocks, size, alg: FitAlg, last_pos: int = 0):
         for b in ordered:
             if b.start >= last_pos:
                 return b
-        return ordered[0]  # wrap-around
+        return ordered[0]  
 
     return None

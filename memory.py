@@ -133,7 +133,7 @@ class Memory:
                     merged = True
                     break
 
-    # ----------------- SHOW (SEM ALTERAÇÃO) -----------------
+    # ----------------- SHOW -----------------
 
     def show(self, width: int = 80):
         if self.size <= width:
